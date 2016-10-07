@@ -20,7 +20,7 @@ public class Parser {
         List<Integer> groupMemberNumbers = new ArrayList<Integer>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
             for (Object line : stream.toArray()) {
-                System.out.println(line);
+                parseIntoListOfNumbersHelper(line.toString());
             }
 //            stream.forEach(line -> {
 //                parseIntoListOfNumbersHelper(line);
@@ -31,6 +31,10 @@ public class Parser {
     }
 
     public static List<Integer> parseIntoListOfNumbersHelper(String line) {
+        // separate out student numbers
+        // logic: all non-number spaces can be discarded and used as separators
+        // can map numbers to names later - let's just group them for now
+        System.out.println(line);
         return null;
     }
 
