@@ -15,13 +15,16 @@ public class Parser {
         this.fileName = fileName;
     }
 
+    // parse a line into a list of numbers
     public void parseIntoListOfNumbers() {
         List<Integer> groupMemberNumbers = new ArrayList<Integer>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-            System.out.println(stream.findFirst());
+            for (Object line : stream.toArray()) {
+                System.out.println(line);
+            }
 //            stream.forEach(line -> {
-//                groupMemberNumbers = parseIntoListOfNumbersHelper(line);
-//            });
+//                parseIntoListOfNumbersHelper(line);
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }
