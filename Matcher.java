@@ -8,12 +8,14 @@ public class Matcher {
     private List<Person> people;
     private Map<Integer, Person> numberPersonMap;
     private Set<List<Person>> groups;
+    private Set<List<Person>> largestGroups;
 
     public Matcher(ArrayList<ArrayList<Integer>> studentNumberGroups, List<Person> people, Map<Integer, Person> numberPersonMap) {
         this.studentNumberGroups = studentNumberGroups;
         this.people = people;
         this.numberPersonMap = numberPersonMap;
         groups = new HashSet<>();
+        largestGroups = new HashSet<>();
     }
 
     public void matchNumbersWithPeople() {
@@ -33,7 +35,29 @@ public class Matcher {
             groups.add(group);
             group = new ArrayList<>();
         }
-        for (List<Person> l : groups) {
+//        for (List<Person> l : groups) {
+//            System.out.println(l.toString());
+//        }
+    }
+
+    public void keepOnlyCompleteGroups() {
+        List<Person> largestGroupSoFar = new ArrayList<>();
+        for (Person p : people) {
+            int maxSizeSoFar = 0;
+            for (List<Person> l : groups) {
+                if (l.contains(p)) {
+                    if (l.size() > maxSizeSoFar) {
+                        maxSizeSoFar = l.size();
+                        largestGroupSoFar = l;
+                    }
+                }
+            }
+            largestGroups.add(largestGroupSoFar);
+        }
+    }
+
+    public void printGroups() {
+        for (List<Person> l : largestGroups) {
             System.out.println(l.toString());
         }
     }

@@ -10,5 +10,7 @@ public class Main {
 
         Matcher m = new Matcher(p.getStudentNumberGroups(), p.getPeople(), p.getNumberPersonMap());
         m.matchNumbersWithPeople();
+        m.keepOnlyCompleteGroups();
+        m.printGroups();
     }
 }
