@@ -6,5 +6,7 @@ public class Main {
         String fileName = "C:\\Users\\alfre\\IdeaProjects\\Grouper\\assets\\data.csv";
         Parser p = new Parser(fileName);
         p.parseIntoListOfNumbers();
+        p.parseNamesAndNumber();
+        p.matchNumbersWithPeople();
     }
 }
