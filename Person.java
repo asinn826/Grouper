@@ -30,4 +30,8 @@ public class Person {
         return studentNumber;
     }
 
+    public String toString() {
+        return "{" + fname + " " + lname + " " + studentNumber + "}";
+    }
+
 }

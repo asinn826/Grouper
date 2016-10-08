@@ -23,6 +23,18 @@ public class Parser {
         numberPersonMap = new HashMap<Integer, Person>();
     }
 
+    public ArrayList<ArrayList<Integer>> getStudentNumberGroups() {
+        return studentNumberGroups;
+    }
+
+    public List<Person> getPeople() {
+        return people;
+    }
+
+    public Map<Integer, Person> getNumberPersonMap() {
+        return numberPersonMap;
+    }
+
     // parse a line into a list of numbers
     public void parseIntoListOfNumbers() {
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
@@ -70,9 +82,9 @@ public class Parser {
         StringBuffer fname = new StringBuffer();
         StringBuffer lname = new StringBuffer();
         StringBuffer studentNum = new StringBuffer();
-        System.out.println(s);
+//        System.out.println(s);
         int i = 0;
-        // should refactor this code to get rid of 3 identical while loops
+        // TODO: should refactor this code to get rid of 3 identical while loops
 //        fname = parseOnlyNameAndNumber("f", s, i);
         while (i < s.length() && s.charAt(i) != ',') {
             fname.append(s.charAt(i));
@@ -97,13 +109,5 @@ public class Parser {
 //        System.out.println(studentNum);
     }
 
-    public void matchNumbersWithPeople() {
-        // have list list of numbers
-        // have list of people
-        // for all list of numbers in list:
-        //      for all numbers in list of numbers:
-        //          match with Person
-        //          print out first name, last name, and student number in nice format
-    }
 
 }
