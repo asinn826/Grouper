@@ -3,7 +3,7 @@
  */
 public class Main {
     public static void main(String[] args) {
-        String fileName = "C:\\Users\\alfre\\IdeaProjects\\Grouper\\assets\\moredata.csv";
+        String fileName = "C:\\Users\\alfre\\IdeaProjects\\Grouper\\assets\\validApps.csv";
         Parser p = new Parser(fileName);
         p.parseIntoListOfNumbers();
         p.parseNamesAndNumber();
